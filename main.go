@@ -17,7 +17,7 @@ func isASCII(s string) bool {
 }
 
 func main() {
-	if len(os.Args) < 3 {
+	if len(os.Args) > 3 || len(os.Args) == 2 {
 		fmt.Println("Input text or/end banner missing")
 		fmt.Println("Usage: go run . [STRING] [BANNER]")
 		fmt.Println("EX: go run . something standard")
@@ -37,7 +37,7 @@ func main() {
 
 	banner := string(os.Args[2])
 	// if banner != "shadow" && banner != "standard" && banner != "thinkertoy" {
-	//	fmt.Println("banner name not correct")
+	//	fmt.Println("The banner name is not correct")
 	//}
 
 	var filename string
@@ -63,6 +63,28 @@ func main() {
 	for fileScanner.Scan() {
 		fileLines = append(fileLines, fileScanner.Text())
 	}
+
+	/* comparing to the rest of the code below is shorter, but doesn't split lines when string includes \n)
+	   	lines := strings.Split(text, "\n")
+
+	   	var generatedArt strings.Builder
+
+	   	for _, word := range lines {
+	   		runes := []rune(word)
+	   		for k := 1; k < 9; k++ {
+	   			for _, ch := range runes {
+	   				m := rune(k)
+	   				asciiFetch := ((ch - 32) * 9) + m
+	   				if int(asciiFetch) >= 0 && int(asciiFetch) < len(fileLines) {
+	   					generatedArt.WriteString(fileLines[int(asciiFetch)])
+	   				}
+	   			}
+	   			generatedArt.WriteString("\n")
+	   		}
+	   	}
+	   	fmt.Print(generatedArt.String())
+	   }
+	*/
 
 	preLine := []rune(text)
 	for m := 0; m < len(preLine); m++ {
