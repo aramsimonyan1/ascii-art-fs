@@ -1,5 +1,5 @@
 # ascii-art-fs
-Go program that processes text inputs as an argument and generates ASCII art representations of the string using predefined patterns from external file. Additionally, users can customise the final output by selecting from multiple ASCII art templates/fonts through terminal input.
+Go program that processes text inputs as an argument and generates ASCII art representations of the string using predefined patterns from external file. Additionally, users can customise the final output by selecting font-style from multiple ASCII art templates through terminal input.
 
 ## Objectives
 Graphic representation using ASCII means to write the string received using ASCII characters, as you can see in the example below:
